@@ -1,71 +1,78 @@
 # Angular Js Important points
 
- This table includes some of the most commonly used commands to help you quickly find and use them in your Angular projects.
 
-| Full Command                               | Shorthand               | Description                        |
-|--------------------------------------------|----------------------------------------------------------    |
-| `ng serve`                                 | `ng s`                  | Start the development server       |
-| `ng generate component component-name`     | `ng g c component-name` | Generate a new Angular component   |
-| `ng generate service service-name`         | `ng g s service-name`   | Generate a new Angular service     |
-| `ng generate module module-name`           | `ng g m module-name`    | Generate a new Angular module      |
-| `ng generate directive directive-name`     | `ng g d directive-name` | Generate a new Angular directive   |
-| `ng generate pipe pipe-name`               | `ng g p pipe-name`      | Generate a new Angular pipe        |
-| `ng generate guard guard-name`             | `ng g g guard-name`     | Generate a new Angular guard       |
-| `ng build`                                 | `ng b`                  | Build the project                  |
-| `ng test`                                  | `ng t`                  | Run unit tests                     |
-| `ng e2e`                                   |                         | Run end-to-end tests               |
-| `ng lint`                                  | `ng l`                  | Lint the project                   |
-| `ng new project-name`                      |                         | Create a new Angular project       |
-| `ng generate class class-name`             | `ng g cl class-name`    | Generate a new Angular class       |
-| `ng generate interface interface-name`     | `ng g i interface-name` | Generate a new Angular interface   |
-| `ng generate enum enum-name`               | `ng g e enum-name`      | Generate a new Angular enum        |
-| `ng generate guard guard-name`             | `ng g g guard-name`     | Generate a new Angular guard       |
-| `ng generate pipe pipe-name`               | `ng g p pipe-name`      | Generate a new Angular pipe        |
-| `ng generate resolver resolver-name`       | `ng g r resolver-name`  | Generate a new Angular resolver    |
-| `ng generate application application-name` | `ng g app app-name`     | Generate a new Angular application |
-| `ng generate library library-name`         | `ng g lib library-name` | Generate a new Angular library     |
+Certainly! Below is a Markdown table that summarizes the common Angular CLI shortcut commands.
+
+```markdown
+# Angular CLI Shortcut Commands
+
+| Command                              | Shorthand   | Description                             |
+|--------------------------------------|-------------|-----------------------------------------|
+| `ng serve`                           | `ng s`      | Start the development server            |
+| `ng generate component <name>`       | `ng g c <name>` | Generate a new component             |
+| `ng generate service <name>`         | `ng g s <name>` | Generate a new service                 |
+| `ng generate module <name>`          | `ng g m <name>` | Generate a new module                  |
+| `ng generate directive <name>`       | `ng g d <name>` | Generate a new directive               |
+| `ng generate pipe <name>`            | `ng g p <name>` | Generate a new pipe                    |
+| `ng generate guard <name>`           | `ng g g <name>` | Generate a new guard                   |
+| `ng build`                           | `ng b`      | Build the project                       |
+| `ng test`                            | `ng t`      | Run unit tests                          |
+| `ng e2e`                             | N/A         | Run end-to-end tests                    |
+| `ng lint`                            | `ng l`      | Lint the project                        |
+| `ng new <project-name>`              | N/A         | Create a new Angular project            |
+| `ng generate class <name>`           | `ng g cl <name>` | Generate a new class                   |
+| `ng generate interface <name>`       | `ng g i <name>` | Generate a new interface               |
+| `ng generate enum <name>`            | `ng g e <name>` | Generate a new enum                    |
+| `ng generate module <name> --routing`| `ng g m <name> --routing` | Generate a new module with routing |
 
 
-#### Getting Started
+### Notes
 
-1. **Install Node.js and npm**
-   - Ensure Node.js and npm are installed. Use the following command to check:
-     ```
-     node -v
-     npm -v
+- Use `ng --help` or `ng <command> --help` for more information on any command.
+- Install the Angular CLI globally if not already installed:
+  ```sh
+  npm install -g @angular/cli
+  ```
 
-     ```
+```markdown
+# Angular 18 Cheat Sheet
 
-2. **Install Angular CLI**
-   - Install the Angular Command Line Interface (CLI) globally:
-     ```
-     npm install -g @angular/cli
+## Getting Started
 
-     ```
+### Install Node.js and npm
+Ensure Node.js and npm are installed. Use the following command to check:
+```sh
+node -v
+npm -v
 
-3. **Create a New Angular Project**
-   - Create a new project using the CLI:
-     ```
-     ng new my-angular-app
+```
 
-     ```
+### Install Angular CLI
+Install the Angular Command Line Interface (CLI) globally:
+```sh
+npm install -g @angular/cli
+```
 
-4. **Navigate to Project Directory**
-   - Change to the project directory:
-     ```
-     cd my-angular-app
+### Create a New Angular Project
+Create a new project using the CLI:
+```sh
+ng new my-angular-app
+```
 
-     ```
+### Navigate to Project Directory
+Change to the project directory:
+```sh
+cd my-angular-app
+```
 
-5. **Serve the Application**
-   - Start the development server:
-     ```
-     ng serve
+### Serve the Application
+Start the development server:
+```sh
+ng serve
+```
+Access the application at `http://localhost:4200`.
 
-     ```
-   - Access the application at `http://localhost:4200`.
-
-#### Project Structure
+## Project Structure
 
 - **src/**: Contains the source code.
 - **app/**: Main application module and component files.
@@ -73,150 +80,133 @@
 - **environments/**: Environment-specific configurations.
 - **angular.json**: Configuration file for Angular CLI.
 
-#### Creating Components, Services, and Modules
+## Creating Components, Services, and Modules
 
-6. **Generate a New Component**
-   - Use the Angular CLI to generate components:
-     ```
-     ng generate component my-component
+### Generate a New Component
+Use the Angular CLI to generate components:
+```sh
+ng generate component my-component
+```
 
-     ```
+### Generate a New Service
+Create a service for handling business logic:
+```sh
+ng generate service my-service
+```
 
-7. **Generate a New Service**
-   - Create a service for handling business logic:
-     ```
-     ng generate service my-service
+### Generate a New Module
+Create a module for organizing your app:
+```sh
+ng generate module my-module
+```
 
-     ```
+## Data Binding and Directives
 
-8. **Generate a New Module**
-   - Create a module for organizing your app:
-     ```
-     ng generate module my-module
+### Interpolation
+Bind data from the component to the view:
+```html
+<h1>{{ title }}</h1>
+```
 
-     ```
+### Property Binding
+Bind properties to DOM elements:
+```html
+<img [src]="imageUrl">
+```
 
-#### Data Binding and Directives
+### Event Binding
+Bind events to methods in the component:
+```html
+<button (click)="handleClick()">Click me</button>
+```
 
-9. **Interpolation**
-   - Bind data from the component to the view:
-     ```
-     <h1>{{ title }}</h1>
+### Two-way Binding
+Bind input fields using `ngModel`:
+```html
+<input [(ngModel)]="userName">
+```
 
-     ```
+### Structural Directives
+- `*ngIf` for conditional rendering:
+  ```html
+  <div *ngIf="isVisible">Content</div>
+  ```
+- `*ngFor` for looping:
+  ```html
+  <div *ngFor="let item of items">{{ item }}</div>
+  ```
 
-10. **Property Binding**
-    - Bind properties to DOM elements:
-      ```
-      <img [src]="imageUrl">
+## Services and Dependency Injection
 
-      ```
+### Creating and Injecting Services
+Define a service and use `@Injectable`:
+```typescript
+@Injectable({
+  providedIn: 'root',
+})
+export class MyService { }
+```
+Inject the service into a component:
+```typescript
+constructor(private myService: MyService) { }
+```
 
-11. **Event Binding**
-    - Bind events to methods in the component:
-      ```
-      <button (click)="handleClick()">Click me</button>
+## Routing
 
-      ```
+### Setting Up Routing
+Configure routes in `app-routing.module.ts`:
+```typescript
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+];
+```
 
-12. **Two-way Binding**
-    - Bind input fields using `ngModel`:
-      ```
-      <input [(ngModel)]="userName">
+### Router Outlet
+Add `<router-outlet>` in your template:
+```html
+<router-outlet></router-outlet>
+```
 
-      ```
+### Router Links
+Use `routerLink` for navigation:
+```html
+<a [routerLink]="['/about']">About</a>
+```
 
-13. **Structural Directives**
-    - `*ngIf` for conditional rendering:
-      ```
-      <div *ngIf="isVisible">Content</div>
+## Advanced Topics
 
-      ```
-    - `*ngFor` for looping:
-      ```
-      <div *ngFor="let item of items">{{ item }}</div>
+### Lazy Loading Modules
+Load modules lazily for better performance:
+```typescript
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  {
+    path: 'feature',
+    loadChildren: () =>
+      import('./feature/feature.module').then((m) => m.FeatureModule),
+  },
+];
+```
 
-      ```
+### Reactive Forms
+Create and manage reactive forms:
+```typescript
+this.myForm = this.fb.group({
+  name: ['', Validators.required],
+  email: ['', [Validators.required, Validators.email]],
+});
+```
 
-#### Services and Dependency Injection
+### HTTP Client
+Use `HttpClientModule` for making HTTP requests:
+```typescript
+this.http.get('api/url').subscribe(data => {
+  this.data = data;
+});
+```
 
-14. **Creating and Injecting Services**
-    - Define a service and use `@Injectable`:
-      ```
-      @Injectable({
-        providedIn: 'root',
-      })
-      export class MyService { }
-
-      ```
-    - Inject the service into a component:
-      ```
-      constructor(private myService: MyService) { }
-
-      ```
-
-#### Routing
-
-15. **Setting Up Routing**
-    - Configure routes in `app-routing.module.ts`:
-      ```
-      const routes: Routes = [
-        { path: '', component: HomeComponent },
-        { path: 'about', component: AboutComponent },
-      ];
-
-      ```
-
-16. **Router Outlet**
-    - Add `<router-outlet>` in your template:
-      ```
-      <router-outlet></router-outlet>
-
-      ```
-
-17. **Router Links**
-    - Use `routerLink` for navigation:
-      ```
-      <a [routerLink]="['/about']">About</a>
-
-      ```
-
-#### Advanced Topics
-
-18. **Lazy Loading Modules**
-    - Load modules lazily for better performance:
-      ```
-      const routes: Routes = [
-        { path: '', component: HomeComponent },
-        {
-          path: 'feature',
-          loadChildren: () =>
-            import('./feature/feature.module').then((m) => m.FeatureModule),
-        },
-      ];
-
-      ```
-
-19. **Reactive Forms**
-    - Create and manage reactive forms:
-      ```
-      this.myForm = this.fb.group({
-        name: ['', Validators.required],
-        email: ['', [Validators.required, Validators.email]],
-      });
-
-      ```
-
-20. **HTTP Client**
-    - Use `HttpClientModule` for making HTTP requests:
-      ```
-      this.http.get('api/url').subscribe(data => {
-        this.data = data;
-      });
-
-      ```
-
-### Best Practices
+## Best Practices
 
 - **Use Angular CLI for Scaffolding**: Simplifies project setup and ensures best practices.
 - **Follow Angular Style Guide**: Ensures code consistency and maintainability.
@@ -224,24 +214,24 @@
 - **Leverage Reactive Programming**: Utilize RxJS for handling asynchronous data streams.
 - **Optimize Performance**: Lazy load modules, use OnPush change detection strategy, and avoid unnecessary bindings.
 
-### Important Commands
+## Important Commands
 
-- **Build the Application**
-  ```
-  ng build
-  ```
+### Build the Application
+```sh
+ng build
+```
 
-- **Run Tests**
-  ```
-  ng test
-  ```
+### Run Tests
+```sh
+ng test
+```
 
-- **Lint the Code**
-  ```
-  ng lint
-  ```
+### Lint the Code
+```sh
+ng lint
+```
 
-- **Update Angular**
-  ```
-  ng update
-  ```
+### Update Angular
+```sh
+ng update
+```
