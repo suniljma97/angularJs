@@ -235,3 +235,86 @@ ng lint
 ```sh
 ng update
 ```
+
+## Tailwind CSS Setup in Angular
+
+This document outlines the steps to integrate Tailwind CSS into your Angular project.
+
+**Prerequisites:**
+
+* Node.js and npm (or yarn) installed.
+
+**Steps:**
+
+1. **Create a New Angular Project (if you don't have one):**
+
+   ```bash
+   ng new my-angular-project
+   ```
+
+2. **Install Tailwind CSS and Dependencies:**
+
+   - Navigate to your project directory:
+
+     ```bash
+     cd my-angular-project
+     ```
+
+   - Install dependencies:
+
+     ```bash
+     npm install -D tailwindcss postcss autoprefixer
+     ```
+
+   - Initialize Tailwind CSS:
+
+     ```bash
+     npx tailwindcss init
+     ```
+
+3. **Configure Tailwind CSS (tailwind.config.js):**
+
+   - Open `tailwind.config.js`.
+   - Update the `content` array to include your Angular component template paths:
+
+     ```javascript
+     module.exports = {
+       content: [
+         "./src/**/*.{html,ts}",
+       ],
+       theme: {
+         extend: {},
+       },
+       plugins: [],
+     };
+     ```
+
+4. **Integrate Tailwind CSS (styles.css):**
+
+   - Open `src/styles.css`.
+   - Import Tailwind CSS directives:
+
+     ```css
+     @tailwind base;
+     @tailwind components;
+     @tailwind utilities;
+     ```
+
+5. **Start Development Server:**
+
+   ```bash
+   ng serve
+   ```
+
+   Open `http://localhost:4200` to view your application.
+
+**Using Tailwind CSS in Components:**
+
+Now, you can use Tailwind CSS classes directly in your component templates:
+
+```html
+<button class="py-2 px-4 bg-blue-500 text-white font-bold rounded">Click Me</button>
+```
+
+This code creates a button with various Tailwind CSS classes applied.
+
