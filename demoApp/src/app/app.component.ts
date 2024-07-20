@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { StudentComponent } from './student/student.component';
-import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { DataBindingComponent } from './components/data-binding/data-binding.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,StudentComponent,AddEmployeeComponent],
+  imports: [RouterOutlet,DataBindingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
