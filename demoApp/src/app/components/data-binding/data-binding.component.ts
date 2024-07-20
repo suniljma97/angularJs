@@ -1,34 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-data-binding',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './data-binding.component.html',
-  styleUrl: './data-binding.component.css'
+  styleUrls: ['./data-binding.component.css']
 })
 export class DataBindingComponent {
 
-  // string, number, boolean
+  // String, number, boolean
   courseName: string = 'Angular 18';
+  stateName: string = '';
+  myClassName: string = 'bg-red-500';
+  inputType: string = 'radio';
+  rollNo: number = 123;
+  isIndian: boolean = false;
+  currentDate: Date = new Date();
 
-  myClassName = 'bg-red-500'
+  firstName = signal('Sunil');
 
-  inputType = 'radio';
+  constructor() {}
 
-  rollNo:number = 123;
-
-  isIndian :boolean = false;
-
-  currentDate:Date = new Date;
-
-  constructor(){
-    
-
+  changeCourseName() {
+    this.courseName = "React JS";
+    this.firstName.set("DHAKAD");
   }
 
-  showAlert(message:string){
-    alert(message)
+  showAlert(message: string) {
+    alert(message);
   }
-
 }
