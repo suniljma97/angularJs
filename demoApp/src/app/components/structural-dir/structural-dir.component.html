@@ -1,0 +1,71 @@
+<div class="border m-2 p-3">
+    <div class="font-bold ">*ngIf </div>
+    <div class="flex gap-3 m-3 border p-2 shadow-sm">
+        <div class="w-1/4 px-3 py-2 border bg-blue-700 text-white"><span *ngIf="isDiv1Visible">Div 1</span></div>
+        <div class="w-1/4 px-3 py-2 border bg-gray-500 text-white"> <span *ngIf="isToggleDive2">Div 2 </span></div>
+        <div class="w-1/4 px-3 py-2 border bg-sky-700 text-white"><span *ngIf="num1===num2">Div 2</span></div>
+        <div class="w-1/4 px-3 py-2 border bg-indigo-600 text-white"><span *ngIf="selectedState==='v2'">Div 4</span>
+        </div>
+    </div>
+    <div class="flex gap-3 m-3 border p-2 shadow-sm">
+        <div class="w-1/4 py-2 flex justify-center">
+            <button type="button" (click)="hideDiv1()"
+                class="border bg-red-700 rounded p-2 text-white me-2">Hide</button>
+            <button type="button" (click)="showDiv1()" class="border bg-blue-700 rounded p-2 text-white">Show</button>
+        </div>
+        <div class="w-1/4 py-2 flex justify-center">
+            <button type="button" (click)="toggleDiv2()"
+                class="border bg-green-700 rounded p-2 text-white">Toggle</button>
+        </div>
+        <div class="w-1/4 py-2 flex justify-center">
+            <input name="flo1" type="text" [(ngModel)]="num1" class="rounded border me-2" />
+            <input name="flo2" type="text" [(ngModel)]="num2" class="rounded border" />
+        </div>
+        <div class="w-1/4 py-2 flex justify-center">
+            <input name="flo1" [(ngModel)]="isActive" type="checkbox" class="rounded border me-2" />
+            <select class="border mt-2 p-1 w-full" [(ngModel)]="selectedState">
+                <option value="v1">V1</option>
+                <option value="v2">V2</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="m-3 border p-2 shadow-sm">
+        <div class="w-1/4 py-2 flex justify-center">
+            <ul class="shadow-sm">
+                <li *ngFor="let city of cityArrays" class="list-disc font-semibold">
+                    {{city}}
+                </li>
+            </ul>
+        </div>
+
+        <div class="w-1/4  py-2 flex justify-center">
+            <select class="border">
+                <option *ngFor="let student of studentList" [value]="student.name">{{student.city}}</option>
+            </select>
+        </div>
+        <div class="w-1/4 py-2 flex justify-center">
+            <table class="table-auto border ">
+                <thead>
+                    <tr class="border-b-2">
+                        <th>SNo</th>
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let info of studentList; let sNo=index">
+                        <td>{{sNo + 1}}</td>
+                        <td>{{info.name}}</td>
+                        <td>{{info.city}}</td>
+                        <td><span *ngIf="info.isActive">Active</span><span *ngIf="!info.isActive">De-Active</span></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</div>
